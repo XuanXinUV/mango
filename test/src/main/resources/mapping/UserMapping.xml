@@ -7,15 +7,81 @@
         <result column="userName" jdbcType="VARCHAR" property="userName" />
         <result column="passWord" jdbcType="VARCHAR" property="passWord" />
         <result column="realName" jdbcType="VARCHAR" property="realName" />
+        <result column="createTime" jdbcType="DATE" property="createTime" />
+        <result column="updateTime" jdbcType="DATE" property="updateTime" />
+        <result column="beId" jdbcType="INTEGER" property="realName" />
+        <result column="phone" jdbcType="VARCHAR" property="phone" />
     </resultMap>
 
-    <select id="getUser" resultType="com.example.entity.User">
-        select * from user where id = #{id}
+    <sql id="Base_Column_List" >
+        id, userName, passWord, realName, createTime, updateTime, beId, phone
+    </sql>
+
+    <select id="getAllUser" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List" />
+        FROM user
+        <trim prefix="where" prefixOverrides="and|or">
+            <if test="id!=null">
+                AND id like #{id}
+            </if>
+            <if test="userName!=null">
+                AND userName=#{userName}
+            </if>
+            <if test="realName!=null">
+                AND realName like #{realName}
+            </if>
+            <if test="phone!=null">
+                AND phone like #{phone}
+            </if>
+        </trim>
     </select>
 
-    <insert id="insertUser" parameterType="com.example.entity.User" useGeneratedKeys="true" keyProperty="id">
-        insert into user(id, userName, passWord, realName)
-        values(#{id}, #{userName}, #{passWord}, #{realName})
+    <select id="getUser" parameterType="java.lang.String" resultMap="BaseResultMap" >
+        SELECT
+        <include refid="Base_Column_List" />
+        FROM user
+        WHERE id = #{id}
+    </select>
+
+    <!--<select id="getUser" resultType="com.example.entity.User">
+        select * from user where id = #{id}
+    </select>-->
+
+    <insert id="insertUser" parameterType="com.example.entity.User"
+            useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+        insert into
+        user
+        (id, userName, passWord, realName, createTime, updateTime, beId, phone)
+        values
+        (#{id}, #{userName}, #{passWord}, #{realName}, #{createTime}, #{updateTime}, #{beId}, #{phone})
     </insert>
+
+    <update id="updateUser" parameterType="com.example.entity.User" >
+        update user
+        <trim prefix="set" suffixOverrides=",">
+            <if test="userName != null and userName != ''">
+                userName = #{userName},
+            </if>
+            <if test="passWord != null and passWord != ''">
+                passWord = #{passWord},
+            </if>
+            <if test="realName != null and realName != ''">
+                realName = #{realName},
+            </if>
+            <if test="updateTime != null and updateTime != ''">
+                updateTime = #{updateTime},
+            </if>
+            <if test="phone != null and phone != ''">
+                updateTime = #{phone},
+            </if>
+        </trim>
+        WHERE id = #{id}
+    </update>
+
+    <delete id="deleteUser" parameterType="java.lang.String" >
+       DELETE FROM user
+       WHERE id =#{id}
+    </delete>
 
 </mapper>
