@@ -1,4 +1,4 @@
-package com.example.io.updateuser;
+package com.miyou.io.updateuser;
 
 import lombok.Data;
 

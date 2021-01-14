@@ -1,6 +1,6 @@
-package com.example.mapper;
+package com.miyou.mapper;
 
-import com.example.entity.OperationLog;
+import com.miyou.entity.OperationLog;
 import org.springframework.stereotype.Repository;
 
 @Repository

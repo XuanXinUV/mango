@@ -1,4 +1,4 @@
-package com.example.utils;
+package com.miyou.utils;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

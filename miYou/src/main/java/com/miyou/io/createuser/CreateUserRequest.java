@@ -1,4 +1,4 @@
-package com.example.io.createuser;
+package com.miyou.io.createuser;
 
 import lombok.Data;
 

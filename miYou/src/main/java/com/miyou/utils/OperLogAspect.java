@@ -1,4 +1,4 @@
-package com.example.utils;
+package com.miyou.utils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,8 +10,8 @@ import java.util.UUID;
 import javax.servlet.http.HttpServletRequest;
 
 import com.alibaba.fastjson.JSON;
-import com.example.entity.OperationLog;
-import com.example.mapper.OperationLogMapper;
+import com.miyou.entity.OperationLog;
+import com.miyou.mapper.OperationLogMapper;
 import org.apache.commons.lang.StringUtils;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
@@ -40,11 +40,11 @@ public class OperLogAspect {
     @Autowired
     public OperationLogMapper mapper;
 
-    @Pointcut("@annotation(com.example.utils.OperLog)")
+    @Pointcut("@annotation(com.miyou.utils.OperLog)")
     public void operLogPoinCut() {
     }
 
-    @Pointcut("execution(* com.example.controller..*.*(..))")
+    @Pointcut("execution(* com.miyou.controller..*.*(..))")
     public void operExceptionLogPoinCut() {
     }
 

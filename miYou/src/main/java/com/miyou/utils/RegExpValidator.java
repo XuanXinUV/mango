@@ -1,4 +1,4 @@
-package com.example.utils;
+package com.miyou.utils;
 
 import org.springframework.stereotype.Component;
 

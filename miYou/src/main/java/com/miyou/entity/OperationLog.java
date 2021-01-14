@@ -1,4 +1,4 @@
-package com.example.entity;
+package com.miyou.entity;
 
 import lombok.Builder;
 import lombok.Data;

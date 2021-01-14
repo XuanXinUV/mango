@@ -1,13 +1,13 @@
-package com.example.controller;
+package com.miyou.controller;
 
-import com.example.io.createuser.CreateUserRequest;
-import com.example.io.createuser.CreateUserResponse;
-import com.example.io.getuser.GetUserRequest;
-import com.example.io.getuser.GetUserResponse;
-import com.example.io.updateuser.UpdateUserRequest;
-import com.example.io.updateuser.UpdateUserResponse;
-import com.example.service.UserService;
-import com.example.utils.OperLog;
+import com.miyou.io.createuser.CreateUserRequest;
+import com.miyou.io.createuser.CreateUserResponse;
+import com.miyou.io.getuser.GetUserRequest;
+import com.miyou.io.getuser.GetUserResponse;
+import com.miyou.io.updateuser.UpdateUserRequest;
+import com.miyou.io.updateuser.UpdateUserResponse;
+import com.miyou.service.UserService;
+import com.miyou.utils.OperLog;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

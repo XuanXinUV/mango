@@ -1,11 +1,12 @@
-package com.example.io.getuser;
+package com.miyou.io.updateuser;
 
-import lombok.*;
+import lombok.Data;
 
 @Data
-public class GetUserRequest {
+public class UpdateUserRequest {
     private String id;
     private String userName;
+    private String passWord;
     private String realName;
     private String phone;
 }

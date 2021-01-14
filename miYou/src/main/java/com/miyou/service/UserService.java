@@ -1,14 +1,14 @@
-package com.example.service;
+package com.miyou.service;
 
-import com.example.entity.User;
-import com.example.io.createuser.CreateUserRequest;
-import com.example.io.createuser.CreateUserResponse;
-import com.example.io.getuser.GetUserRequest;
-import com.example.io.getuser.GetUserResponse;
-import com.example.io.updateuser.UpdateUserRequest;
-import com.example.io.updateuser.UpdateUserResponse;
-import com.example.mapper.UserMapper;
-import com.example.utils.RegExpValidator;
+import com.miyou.entity.User;
+import com.miyou.io.createuser.CreateUserRequest;
+import com.miyou.io.createuser.CreateUserResponse;
+import com.miyou.io.getuser.GetUserRequest;
+import com.miyou.io.getuser.GetUserResponse;
+import com.miyou.io.updateuser.UpdateUserRequest;
+import com.miyou.io.updateuser.UpdateUserResponse;
+import com.miyou.mapper.UserMapper;
+import com.miyou.utils.RegExpValidator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

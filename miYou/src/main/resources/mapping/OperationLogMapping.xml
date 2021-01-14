@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.mapper.OperationLogMapper">
+<mapper namespace="com.miyou.mapper.OperationLogMapper">
 
-    <resultMap id="BaseResultMap" type="com.example.entity.OperationLog">
+    <resultMap id="BaseResultMap" type="com.miyou.entity.OperationLog">
         <result column="id" jdbcType="VARCHAR" property="id" />
         <result column="operModel" jdbcType="VARCHAR" property="operModel" />
         <result column="request" jdbcType="VARCHAR" property="request" />
@@ -16,7 +16,7 @@
         <result column="remark" jdbcType="VARCHAR" property="remark" />
     </resultMap>
 
-    <insert id="insertOperationLog" parameterType="com.example.entity.OperationLog"
+    <insert id="insertOperationLog" parameterType="com.miyou.entity.OperationLog"
             useGeneratedKeys="true" keyProperty="id" keyColumn="id">
         insert into
         operation_log
