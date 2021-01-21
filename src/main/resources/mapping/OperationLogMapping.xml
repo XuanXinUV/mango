@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.miyou.miyouapp.mapper.OperationLogMapper">
+
+    <resultMap id="BaseResultMap" type="com.miyou.miyouapp.entity.OperationLog">
+        <result column="id" jdbcType="VARCHAR" property="id" />
+        <result column="operModel" jdbcType="VARCHAR" property="operModel" />
+        <result column="request" jdbcType="VARCHAR" property="request" />
+        <result column="response" jdbcType="VARCHAR" property="response" />
+        <result column="userId" jdbcType="VARCHAR" property="userId" />
+        <result column="userName" jdbcType="VARCHAR" property="userName" />
+        <result column="url" jdbcType="VARCHAR" property="url" />
+        <result column="ip" jdbcType="VARCHAR" property="ip" />
+        <result column="createTime" jdbcType="DATE" property="createTime" />
+        <result column="type" jdbcType="VARCHAR" property="type" />
+        <result column="remark" jdbcType="VARCHAR" property="remark" />
+    </resultMap>
+
+    <insert id="insertOperationLog" parameterType="com.miyou.miyouapp.entity.OperationLog"
+            useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+        insert into
+        operation_log
+        (id, operModel, request, response, userId, userName, url, ip, createTime, type, remark)
+        values
+        (#{id}, #{operModel}, #{request}, #{response}, #{userId}, #{userName}, #{url}, #{ip}, #{createTime}, #{type}, #{remark})
+    </insert>
+
+</mapper>
